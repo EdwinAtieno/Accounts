@@ -18,60 +18,60 @@ class Accounts:
 
             # Credit wanjiru's account
             self.Wanjiru_account += amount
-            print("\n Amount Deposited:", amount)
+            print("\n Amount Deposited:\t", amount)
 
         # check who is making the deposit
         elif self.name == "juma":
-            amount = float(input("Enter amount to be Deposited: "))
+            amount = float(input("Enter amount to be Deposited:\t"))
 
             # Credit Juma's account
             self.Juma_account += amount
-            print("\n Amount Deposited:", amount)
+            print("\n Amount Deposited:\t", amount)
 
         # check who is making the deposit
         else:
-            amount = float(input("Enter amount to be Deposited: "))
+            amount = float(input("Enter amount to be Deposited:\t"))
 
             # Credit Linda's account
             self.Linda_account += amount
-            print("\n Amount Deposited:", amount)
+            print("\n Amount Deposited:\t", amount)
 
     """ check if the user has any amount in their accounts and verify who is doing the withdrawal before making the withdrawal
             from their account and the return insufficient message if account is less"""
     def withdraw(self):
 
         if self.name == "wanjiru":
-            amount = float(input("Enter amount to be Withdrawn: "))
+            amount = float(input("Enter amount to be Withdrawn:\t"))
             if self.Wanjiru_account >= amount:
                 self.Wanjiru_account -= amount
-                print("\n You Withdrew:", amount)
+                print("\n You Withdrew:\t", amount)
             else:
-                print("\n Insufficient balance  ")
+                print("\n Insufficient balance")
 
         elif self.name == "juma":
-            amount = float(input("Enter amount to be Withdrawn: "))
+            amount = float(input("Enter amount to be Withdrawn:\t"))
             if self.Juma_account >= amount:
                 self.Juma_account -= amount
-                print("\n You Withdrew:", amount)
+                print("\n You Withdrew:\t", amount)
             else:
-                print("\n Insufficient balance  ")
+                print("\n Insufficient balance")
 
         else:
-            amount = float(input("Enter amount to be Withdrawn: "))
+            amount = float(input("Enter amount to be Withdrawn:\t"))
 
             if self.Linda_account >= amount:
                 self.Linda_account -= amount
-                print("\n You Withdrew:", amount)
+                print("\n You Withdrew:\t", amount)
 
             else:
-                print("\n Insufficient balance  ")
+                print("\n Insufficient balance")
 
     """Bank transfer for customers depending on the account balance"""
     def transfer(self):
         if self.name == "wanjiru":
-            amount = float(input("Enter amount to be transfer: "))
+            amount = float(input("Enter amount to be transfer:\t"))
 
-            transferee= str(input("enter user to send to, Linda or Juma")).lower()
+            transferee= str(input("enter user to send to, Linda or Juma\t")).lower()
 
             if self.Wanjiru_account >= amount:
                 self.Wanjiru_account -= amount
@@ -82,14 +82,14 @@ class Accounts:
                 elif transferee == "linda":
                     self.Linda_account += amount
 
-                print("\n You transferred:", amount)
+                print("\n You transferred:\t", amount)
             else:
                 print("\n Insufficient balance  ")
 
         elif self.name == "Juma":
-            amount = float(input("Enter amount to be transfer: "))
+            amount = float(input("Enter amount to be transfer:\t"))
 
-            transferee = str(input("enter user to send to, wanjiru or Linda")).lower()
+            transferee = str(input("enter user to send to, wanjiru or Linda:\t")).lower()
 
             if self.Juma_account >= amount:
                 self.Juma_account -= amount
@@ -99,15 +99,15 @@ class Accounts:
 
                 elif transferee == "linda":
                     self.Linda_account += amount
-                print("\n You transferred:", amount)
+                print("\n You transferred:\t", amount)
 
             else:
                 print("\n Insufficient balance  ")
 
         else:
-            amount = float(input("Enter amount to be transfer: "))
+            amount = float(input("Enter amount to be transfer:\t"))
 
-            transferee = str(input("enter user to send to, wanjiru or Juma")).lower()
+            transferee = str(input("enter user to send to, wanjiru or Juma:\t")).lower()
 
             if self.Linda_account >= amount:
                 self.Linda_account -= amount
@@ -118,7 +118,7 @@ class Accounts:
                 elif transferee == "wanjiru":
                     self.Wanjiru_account += amount
 
-                print("\n You transferred :", amount)
+                print("\n You transferred\t:", amount)
 
             else:
                 print("\n Insufficient balance  ")
